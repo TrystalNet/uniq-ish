@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "es6",
+    "sourceMap": true,
+    "removeComments": true,
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "strictNullChecks": true, // recursion doesn't seem to work with this turned o, so leave it off
+    "declaration": true,
+    "outDir": ".."
+  }  ,
+  "files": [
+    "./uniq-ish.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
