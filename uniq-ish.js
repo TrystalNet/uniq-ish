@@ -22,4 +22,3 @@ export function randomId(len, validator) {
     }
     return id;
 }
-//# sourceMappingURL=uniq-ish.js.map

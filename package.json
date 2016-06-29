@@ -1,6 +1,6 @@
 {
   "name": "uniq-ish",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "Utilities for creating various types of unique ids",
   "main": "uniq-ish.js",
   "typings": "uniq-ish.d.ts",

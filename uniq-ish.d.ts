@@ -1,2 +1,4 @@
-export declare function base62encode(i: number): string;
-export declare function randomId(len: number, validator?: (id: string) => boolean): string;
+declare module "uniq-ish" {
+  export function base62encode(i: number): string;
+  export function randomId(len: number, validator?: (id: string) => boolean): string;
+}
