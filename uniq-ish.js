@@ -1,5 +1,4 @@
 "use strict";
-console.log('15-06-28A');
 function base62encode(i) {
     const chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
     if (i === 0)

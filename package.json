@@ -1,6 +1,6 @@
 {
-  "name": "uniq-ish",
-  "version": "1.0.2",
+  "name": "@trystal/uniq-ish",
+  "version": "1.1.0",
   "description": "Utilities for creating various types of unique ids",
   "main": "uniq-ish.js",
   "typings": "uniq-ish.d.ts",
