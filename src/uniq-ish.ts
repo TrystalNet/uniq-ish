@@ -1,24 +1,25 @@
-console.log('15-06-28A')
+import {BASE62CHARS, base62Encode} from '@trystal/int-to-basenn'
 
-export function base62encode(i:number):string {
-  const chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
-  if (i === 0) return '0'
-  let s = ''
-  while (i > 0) {
-    s = chars[i % 62] + s
-    i = Math.floor(i / 62)
-  }
-  return s
+export const base62encode = base62Encode  // backward compatibility
+
+function genId(len:number, charset:string) : string {
+  let chars = [] as string[]
+  for(let i = 0; i < len; i++) chars.push(charset[Math.floor(Math.random()*charset.length)])
+  return chars.join('')
 }
 
-export function randomId(len:number, validator?:(id:string)=>boolean) {
-  const Q = Math.pow(62, len || 4)
-  const F = () => base62encode(Math.floor(Math.random()*Q))
-  let id = F()
-  if (validator) {
-    let reps = 0
-    const maxreps = 100
-    while (reps++ < maxreps && !validator(id)) id = F()
+export function randomId(len:number, validator?:((id:string)=>boolean)|null, charset = BASE62CHARS) {
+  const maxVal = charset.length
+  const maxAttempts = 100
+  let newlen = len
+  while(true) {
+    for(let i = 0; i < 100; i++) {
+      let id = genId(newlen, charset)
+      if(!validator || validator(id)) return id
+    }
+    newlen++
+    if(newlen > 10 && newlen > len + 2) throw "could not find a random Id given that satisfies the validator"  
   }
-  return id
 }
+
+

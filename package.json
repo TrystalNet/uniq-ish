@@ -1,6 +1,6 @@
 {
   "name": "@trystal/uniq-ish",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Utilities for creating various types of unique ids",
   "main": "uniq-ish.js",
   "typings": "uniq-ish.d.ts",
@@ -16,5 +16,8 @@
     "ts-loader": "^0.8.2",
     "typescript": "^2.0.0-dev.20160628",
     "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "@trystal/int-to-basenn": "^1.1.2"
   }
 }

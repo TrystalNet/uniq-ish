@@ -1,11 +1,22 @@
 # uniq-ish
-Starting a library for creating unique ids suitable for different applications.
+Creates unique ids by generating a string of base62 characters of specified length.
 
-Trystal requires unique ids to identify every line within a trist. Documents can be very large, and guids are inefficient overkill, 
-and we found that we were often needing unique ids for one reason or another.
+For example:
 
-Rather than re-invent the wheel for each project, we decided to create this shared project.
+randomId(2) => 'Aa'
+randomId(10) => '09aRq3zzy3'
 
-We have plans to add some other types of unique ids as requirements dictate.
+A validator function can be passed as a parameter to specify which output values cannot be emitted 
+(very useful for ensuring uniqueness in a domain)
 
-This code also functions as an example of how to get Typescript/Webpack/Github/NPM working together for a simple project.
+let previouslyGenerated = new Set(['aa','bb','cc'])
+let alreadyUsed = id => previouslyGenerated.has(id)
+let r = randomId(2, alreadyUsed)
+==> a0, Bb, ba, cx, 00, etc...
+
+If the function fails after 100 attempts to produce a result it 
+lengthens the number:
+
+let iReallyWantThreeChars = id => id.length > 2
+let r = randomId(2, iReallyWantThreeChars)
+==> a0x, xb1, bb3, 000, ...
