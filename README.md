@@ -18,7 +18,7 @@ For example, to require your id have at least one 'a':
 let r = randomId(5, id => id.indexOf('a'>= 0))  // bcq12
 ```
 
-### If the function fails after 100 attempts to produce a result it lengthens the number:
+If the function fails after 100 attempts to produce a result it lengthens the number:
 
 ```
 let TWO = 2
