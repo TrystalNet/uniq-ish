@@ -35,4 +35,4 @@ For example, to generate a random string of 10 'ABC#@' characters:
 console.log(randomId(10,null,'ABCD##')) // @B#DD#@ABC
 ```
 
-This created for use in the Trystal code ecosystem.
+<b>uniq-ish</b> was created for use in the Trystal code ecosystem.
