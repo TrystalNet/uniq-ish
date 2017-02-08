@@ -32,7 +32,7 @@ You can pass your own character set instead, as a string of any length.
 For example, to generate a random string of 10 'ABC#@' characters: 
 
 ```
-console.log(randomId(10,null,'ABCD##')) // @B#DD#@ABC
+console.log(randomId(10,null,'ABCD@#')) // @B#DD#@ABC
 ```
 
 <b>uniq-ish</b> was created for use in the Trystal code ecosystem.
