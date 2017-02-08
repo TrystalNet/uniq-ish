@@ -1,6 +1,6 @@
 import {randomId} from '../src/uniq-ish'
 
-describe('tests', () => {
+describe('uniq-ish tests', () => {
   it('Creates a unique id with length 3', () => {
     const id = randomId(3)
     console.log(id)
@@ -35,5 +35,12 @@ describe('tests', () => {
     let invalidPos = -1
     id.split('').forEach((c,i) => { if(charset.indexOf(c)< 0) invalidPos = i})
     expect(invalidPos).toBe(-1)
+  })
+
+  it('Creates a unique id with length 50 using just \'abcdef-\' where values have exactly one -', () => {
+    const validator = (s:string) => (s.match(/-/g)||[]).length == 1
+    const id = randomId(10, validator, 'abc-def')
+    console.log(id)
+    expect(id.length).toEqual(10)
   })
 })
