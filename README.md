@@ -4,7 +4,7 @@ Creates unique ids by generating a string of random characters of specified leng
 For example:
 
 ```
-console.log(randomId(2)) // 'Aa'  
+console.log(randomId(2)) // 'mQ'  
 console.log(randomId(10)) // '09aRq3zzy3'
 ```
 
@@ -15,7 +15,7 @@ A <b>validator</b> function can be passed as a parameter to specify which output
 For example, to require your id have at least one 'a':  
 
 ```
-let r = randomId(5, id => id.indexOf('a'>= 0))  // bcq12
+console.log(randomId(5, id => id.indexOf('a'>= 0)))  // bcq12
 ```
 
 If the function fails after 100 attempts to produce a result it lengthens the number:
@@ -23,7 +23,7 @@ If the function fails after 100 attempts to produce a result it lengthens the nu
 ```
 let TWO = 2
 let THREEACTUALLY = id => id.length > 2
-console.log(randomId(TWO, THREEACTUALLY)) ==> a0x, xb1, bb3, 000, ...  
+console.log(randomId(TWO, THREEACTUALLY)) // a0x, xb1, bb3, 000, ...  
 ```
 
 ## Custom Character Set
@@ -35,4 +35,4 @@ For example, to generate a random string of 10 'ABC#@' characters:
 console.log(randomId(10,null,'ABCD@#')) // @B#DD#@ABC
 ```
 
-<b>uniq-ish</b> was created for use in the Trystal code ecosystem.
+_uniq-ish_ was created for use in the Trystal code ecosystem.
